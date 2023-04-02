@@ -1,0 +1,25 @@
+{% extends 'partial/base.html' %}
+{% block title %}Users Withdrawl request{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Withdrawl request</h2>
+    <hr>
+
+    {% for x in form reversed %}
+    <div class="row mt-2">
+        <h1 class="lead text-center mb-5 mt-5">{{x.asset}}</h1>
+        <div class="col-lg-6 col-sm-12">
+            <img src="{{x.image.url}}" alt="" class="img-thumbnail image-asset">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <article>
+                {{x.date}} <br>
+                <h3>{{x.name}}</h3>
+            </article>
+        </div>
+    {% endfor %}
+   
+
+</div>
+{% endblock %}

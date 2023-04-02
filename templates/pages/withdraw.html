@@ -1,0 +1,15 @@
+{% extends 'partial/base.html' %}
+{% block title %}Withdraw{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Withdraw</h2>
+<form method="post">
+{% csrf_token %}
+{{ form|crispy }}
+
+<input type="submit" value="Sent" class="btn1">
+       
+</form>
+</div>
+{% endblock %}

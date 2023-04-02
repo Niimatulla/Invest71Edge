@@ -1,0 +1,131 @@
+{% extends 'partial/base.html' %}
+{% block content %}
+
+{% if user.is_authenticated and user.is_staff and user.is_superuser%}
+<h2 class="text-center mt-5 mb-5">Hi admin</h2>
+<div class="container">
+    <div class="row">
+       
+        <div class="col-lg-4 col-sm-12">
+            <a href="{% url 'adm2'%}" class="" style="text-decoration: none; color:#0B0D22">
+            <h1>Total deposit</h1>
+            <h3>{{hmm1}}</h3>
+        </a>
+        </div>
+     
+       
+            <div class="col-lg-4 col-sm-12">
+                <a href="{% url 'adm1'%}" class="" style="text-decoration: none; color:#0B0D22">
+                <h1>Total withdraw request</h1>
+                <h3>{{hmm}}</h3>
+            </a>
+            </div>
+       
+        
+            <div class="col-lg-4 col-sm-12">
+                <a href="#" class="" style="text-decoration: none; color:#0B0D22">
+                <h1>Total users</h1>
+                <h3>{{count}}</h3>
+            </a>
+            </div>
+       
+    </div>
+</div>
+{% elif user.is_authenticated and user.approve == True%}
+<h1 class="mt-5 text-center">Welcome {{user.username}} your are approve </h1>
+<div class="container mt-5">
+    <p class="int">
+        To withdraw funds from your Invest71Edge account, please follow the steps below:
+    
+    1.Log in to your Invest71Edge account. <br>
+    2.Navigate to the "Cashout" section of the platform. <br>
+    3.Enter the wallet address where you want to receive your funds. <br>
+    4.Fill in the amount you wish to withdraw. <br>
+    5.Double-check the withdrawal details to ensure they are correct. <br>
+    6.Click on the "Submit" button to initiate the withdrawal. <br>
+    
+    Once the withdrawal request has been processed, your funds will be sent to the designated wallet address. The processing time for withdrawals may vary depending on the platform's policies and the network congestion of the cryptocurrency being withdrawn. However, once the withdrawal is approved, you should receive your funds almost instantly.
+    
+    It's important to note that some platforms may have withdrawal limits or fees, so it's essential to check the platform's policies before initiating any withdrawals. If you encounter any issues or have questions, you can reach out to the Invest71Edge customer support team for assistance.
+    
+    
+    
+    
+    </p>
+</div>
+{% elif user.is_authenticated %}
+<div class="container home-con">
+    <h1 class="text-center">Welcome {{user.username}}</h1>
+    <hr>
+
+    {% for message in messages %}
+    {% if message %}
+    <div class="alert alert--{{message.tags}}" style="background-color: #BF8924; color:#0B0D22">
+        {{message}}
+    {% endif %}
+    
+    </div>
+       <hr>
+       
+    {% endfor %}  
+
+
+    <p>
+        Our investment platform is designed to ensure the safety and security of your funds.
+         We use the latest security measures and protocols to protect your investment, so you 
+         can rest assured that your money is safe with us. Plus, our user-friendly platform makes
+          it easy for you to monitor your investment and track your earnings.
+
+    </p>
+    <hr>
+   
+    <div class="row mt-2">
+        {% for x in asset %}
+        <h1 class="lead text-center mb-5 mt-5">{{x.name}}</h1>
+        <div class="col-lg-6 col-sm-12">
+            <img src="{{x.image.url}}" alt="" class="img-thumbnail image-asset">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <article>
+                {{x.body}}
+            </article>
+            <h2 class="mt-3">Price: ${{x.price}}</h2>
+            <center class="btn btn buy-btn mt-2 mb-3" style="background-color: #0B0D22; width:10rem; ">
+                <a href="{% url 'buy'%}" class="buy-a " style="text-decoration: none; color:#fff">Purchase</a>
+            </center>
+        </div>
+        
+           
+        
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <p class="mt-5 f1 mb-3">
+        Invest71Edge is a powerful investment platform that offers an array of investment opportunities for individuals looking to grow their wealth. With this platform, users can earn daily profits of 4%, 5%, and even 10% on their investments. What makes Invest71Edge stand out from other investment platforms is that users can withdraw their profits every 2 days, providing greater flexibility and control over their investments.
+    
+    Invest71Edge offers a user-friendly interface that makes it easy for users to navigate the platform and make investments. Users can start investing with as little as $50 and choose from various investment plans based on their risk tolerance and investment goals.
+    
+    Investment plans on the platform include Silver, Gold, and Platinum. Each plan offers different daily profit percentages, with the Platinum plan offering the highest daily profit of 10%.
+    
+    The platform uses advanced investment strategies to ensure that users' investments generate maximum profits every day. This includes the use of artificial intelligence and machine learning algorithms to analyze market trends and make data-driven investment decisions.
+    
+    Invest71Edge also offers excellent customer support to its users. Their team of experienced investment professionals is available 24/7 to answer any questions or concerns users may have. Additionally, the platform offers various educational resources, including investment guides and market analysis, to help users make informed investment decisions.
+    
+    One of the most significant advantages of Invest71Edge is the flexibility it offers users. With the ability to withdraw profits every 2 days, users have more control over their investments and can quickly reinvest profits or withdraw them for other purposes.
+    
+    Overall, Invest71Edge is an excellent investment platform for anyone looking to grow their wealth. With its 
+    user-friendly interface, advanced investment strategies, and flexible withdrawal options, it provides users with 
+    a simple and effective way to invest and earn profits. Whether you're a novice investor or an experienced trader, 
+    Invest71Edge offers something for everyone.
+    <br>
+    <br>
+    <br>
+    Sign up today and start seeing your investment grow
+    <br>
+    <a href="{% url 'signup' %}">Signup</a>
+    </p>
+</div>
+{% endif %}
+{% endblock content %}

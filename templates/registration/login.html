@@ -1,0 +1,24 @@
+{% extends 'partial/base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Login</h2>
+<form method="post">
+{% csrf_token %}
+{{ form|crispy }}
+<div class="row">
+    <div class="col-lg-10 col-sm-12">
+        <input type="submit" value="Login" class="btn1">
+        {% comment %} <a href="#" class="ln">Forget your password?</a> {% endcomment %}
+    </div>
+    <!-- <div class="col-lg-5 col-sm-12">
+        <a href="#" class="ln">Forget your password?</a>
+    </div> -->
+    <div class="col-lg-2 col-sm-12">
+        <a href="{% url 'signup'%}" class="ln">Signup</a>
+    </div>
+</div>
+</form>
+</div>
+{% endblock %}

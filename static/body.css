@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap');
+
+
+.body{
+    background-color: #fff;
+    font-family: 'Alegreya Sans', sans-serif;
+    
+}
+.container{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.f1{
+    font-family: 'Rokkitt', serif;
+}
+.navbar{
+    background-color: #0B0D22 ;
+    color:#fff;
+    font-family: 'Mitr', sans-serif;
+}
+.navbar a{
+    color:#fff;
+}
+.navbar a:hover{
+    color: #BF8924;
+}
+.navbar navbar-toggler{
+    color: #fff;
+    background-color: #fff;
+}
+.btn1{
+    background-color: #0B0D22 ;
+    color:#fff;
+    margin-top: 1rem;
+}
+.navbar ul dropdown-menu{
+    background-color: #0B0D22 ;
+}
+.image-asset{
+    box-shadow: #0B0D22 0px 1px 2px 0px,#0B0D22 0px 1px 3px 1px;
+    border-radius: 2rem;
+    
+}
+.home-con{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 6rem;
+}
+.ast{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+    
+.ln a{
+    color: #0B0D22;
+}
+
+/* .mes{
+    background-color: #BF8924;
+} */
+.footer{
+    background-color: #0B0D22;
+    color: white;
+    margin-top: 20rem;
+    /* height: 16rem; */
+}
+.footer ul {
+    list-style: none;
+    font-size: larger;
+}
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+.footer marquee{
+    font-size: xx-large;
+}
+.hadi{
+    margin-top: 10rem;
+    margin-bottom: 0;
+}
+.logo{
+    height: 8rem;
+}
+.footer a:hover{
+    color: #BF8924;
+}
+
+.int{
+    font-size: x-large;
+}

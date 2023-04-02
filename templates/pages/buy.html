@@ -1,0 +1,36 @@
+{% extends 'partial/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Buy your asset here</h2>
+<hr>
+
+
+
+ 
+<p>
+
+    To make a  deposit in the Invest71Edge platform using USDT(TRC20), please follow the steps below: <br>
+
+    Copy the deposit address provided by Invest71Edge.
+    Open your USDT(TRC20) wallet and initiate a transfer to the copied deposit address.
+    Wait for the transaction to be confirmed by the blockchain network. This usually takes a few minutes.
+    Take a screenshot of the transaction details, including the transaction hash, amount, and deposit address.
+    Go back to the Invest71Edge platform and navigate to the deposit section.
+    Fill in the required details, including the transaction hash, amount, and date and time of the transaction.
+    Upload the screenshot of the transaction details and submit the deposit form.
+    Wait for the Invest71Edge team to verify the transaction and credit the deposit to your account. This usually takes at least 10 minutes.
+    It's important to note that the deposit process may vary depending on the platform's policies and procedures. If you encounter any issues
+    or have questions, you can reach out to the Invest71Edge customer support team for assistance.
+    <hr>
+
+</p>
+<h1 class="">Deposit address is: TGgft7Mh1PTRsgQM7ank6B9zvvcRjBrEGP </h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Sent" class="btn1">
+</form>
+</div>
+{% endblock content %}
